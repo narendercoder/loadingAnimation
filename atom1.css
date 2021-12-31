@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+  
+    background: rgb(0, 0, 0);
+  }
+  @keyframes animate
+{
+  0%
+  {
+
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    background: black;
+}
+.particle{
+    position: absolute;
+    border: 2px solid #121212;
+}
+#electron1{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-left: 2px solid #ffff00;
+    border-top: 2px solid #ffff00;
+    animation: animate 2s linear infinite;
+    
+}
+
+#electron2{
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-right: 2px solid #03a9f4;
+    border-bottom: 2px solid #03a9f4;
+    animation: animate 1s linear reverse infinite;
+}
+#electron3{
+    top: 70px;
+    left: 70px;
+    right: 70px;
+    bottom: 70px;
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-left: 2px solid #03f437;
+    border-top: 2px solid #03f437;
+    animation: animate 1s linear infinite;
+    
+}
+.circle{
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    background: transparent;
+    transform-origin: left ;
+}
+
+#electron1 .circle{
+    transform: rotate(-45deg);
+}
+#electron2 .circle{
+    transform: rotate(-45deg);
+}
+#electron3 .circle{
+    transform: rotate(-45deg);
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    top: -4px;
+    right: -6px;
+}
+#electron1 .circle::before{
+    background: #ffff00;
+    box-shadow: 0 0 20px #ff0,
+                0 0 40px #ff0,
+                0 0 60px #ff0,
+                0 0 80px #ff0,
+                0 0 100px #ff0;
+            
+}
+#electron2 .circle::before{
+    background: #03a9f4;
+    box-shadow: 0 0 20px #03a9f4,
+                0 0 40px #03a9f4,
+                0 0 60px #03a9f4,
+                0 0 80px #03a9f4,
+                0 0 100px #03a9f4;
+            
+}
+#electron3 .circle::before{
+    background: #03f437;
+    box-shadow: 0 0 20px #03f437,
+                0 0 40px #03f437,
+                0 0 60px #03f437,
+                0 0 80px #03f437,
+                0 0 100px #03f437;
+            
+}
+.center{
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    z-index: 11;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    box-shadow: 0 0 5px rgba(255,0,0,1),
+                0 0 25px rgba(255,0,0,1),
+                0 0 50px rgba(255,0,0,1),
+                0 0 100px rgba(255,0,0,1),
+                0 0 200px rgba(255,0,0,0.5),
+                0 0 300px rgba(255,0,0,0.5);
+  }
